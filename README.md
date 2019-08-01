@@ -59,13 +59,13 @@ film_seen.all
 film_seen.find_by(already_seen: true).destroy
 
 
-==========================Le seed : aux BDD bien créées, la valeur n'attend point le nombre des années============================
+==========================Le seed : aux BDD bien créées===========================
 require 'faker'
 100.times do
 	Movie.create(name: Faker::Movie.quote, year: Faker::Date.between(from:1990, to:2020), 
 		genre: Faker::Book.genre, 
 		synopsis: Faker::Lorem.sentence(word_count: 10, supplemental: true), director: Faker::Name.name, 
-		allocine_string: Faker::Number.between(from: 0, to: 5), already_seen: Faker::Boolean.boolean(true_ratio: 0.2))
+		allocine_string: Faker::Number.between(from: 0, to: 5), already_seen: Faker::Boolean.boolean(true_ratio: 0))
 end
 
 puts "100 users added"
